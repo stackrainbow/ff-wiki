@@ -24,7 +24,7 @@ if [ ! -f "$FLAG_FILE" ]; then
         .login-logo { 
           width: 108px !important; 
           height: 108px !important; 
-          margin: 24px 0 0 24px !important;
+          padding: 24px 0 0 24px !important;
         }
         
         /* Only affect v-avatar inside login-logo */
