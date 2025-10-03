@@ -8,7 +8,7 @@ if [ ! -f "$FLAG_FILE" ]; then
     echo "First run detected. Modifying login CSS file..."
     
     # Find the login.*.js file in /wiki/assets/css
-    LOGIN_FILE=$(find /wiki/assets/css -name "login.*.js" -type f | head -n 1)
+    LOGIN_FILE=$(find /wiki/assets/css -name "login.*.css" -type f | head -n 1)
     
     if [ -n "$LOGIN_FILE" ]; then
         echo "Found login file: $LOGIN_FILE"
@@ -18,7 +18,7 @@ if [ ! -f "$FLAG_FILE" ]; then
         
         echo "CSS modification applied successfully"
     else
-        echo "Warning: No login.*.js file found in /wiki/assets/css"
+        echo "Warning: No login.*.css file found in /wiki/assets/css"
     fi
     
     # Create flag file to prevent future modifications
