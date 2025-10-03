@@ -13,8 +13,24 @@ if [ ! -f "$FLAG_FILE" ]; then
     if [ -n "$LOGIN_FILE" ]; then
         echo "Found login file: $LOGIN_FILE"
         
-        # Append the CSS rule to the file
-        echo ".login { background-size: auto !important; }" >> "$LOGIN_FILE"
+        # Append the CSS patches
+        cat <<'EOF' >> "$LOGIN_FILE"
+
+        .login {
+          background-size: auto !important; 
+          background-position: 90% !important;
+        }
+        
+        .login-logo { 
+          width: 108px !important; 
+          height: 108px !important; 
+        }
+        
+        .v-avatar { 
+          width: 68px !important; 
+          height: 68px !important; 
+        }
+EOF
         
         echo "CSS modification applied successfully"
     else
