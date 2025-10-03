@@ -24,6 +24,9 @@ services:
       DB_PASS: wikijsrocks
       DB_NAME: wiki
     restart: unless-stopped
+    volumes:
+      - ./our-entrypoint.sh:/our-entrypoint.sh:ro,Z
+    entrypoint: /our-entrypoint.sh
 
 volumes:
   db-data:
