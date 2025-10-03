@@ -1,0 +1,4 @@
+services:
+  wiki:
+    ports:
+      - "3050:3000"

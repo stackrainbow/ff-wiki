@@ -1,0 +1,15 @@
+services:
+  wiki:
+    networks:
+      - default
+      - nginx_network
+    environment:
+      VIRTUAL_HOST: ${HOST}
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: ${HOST}
+    #labels:
+    #  com.github.nginx-proxy.nginx-proxy.keepalive: 'disabled'
+
+networks:
+  nginx_network:
+    external: true
